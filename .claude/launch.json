@@ -1,0 +1,8 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "species-prototype", "runtimeExecutable": "npx", "runtimeArgs": ["--yes", "serve", "-l", "5173", "."], "port": 5173 },
+    { "name": "species-web", "runtimeExecutable": "npx", "runtimeArgs": ["--prefix", "web", "next", "dev", "web", "-p", "3100"], "port": 3100 },
+    { "name": "species-web-redesign", "runtimeExecutable": "npx", "runtimeArgs": ["--prefix", "web", "next", "dev", "web"], "port": 3200, "autoPort": true }
+  ]
+}

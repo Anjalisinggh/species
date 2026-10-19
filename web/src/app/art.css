@@ -1,0 +1,32 @@
+/* Painted artwork (see src/lib/art.ts). Loaded after theme.css. */
+.scene-art{background:var(--rose);display:block}
+.scene-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--med) var(--ease)}
+.scard:hover .scene-art img{transform:scale(1.04)}
+.pscene.scene-art{min-height:400px}
+
+/* home hero: the lead species' painting fills the right side and fades into the page on the left */
+.hero-art{position:absolute;top:0;right:0;bottom:0;left:38%;width:62%;height:100%;object-fit:cover;display:block}
+.hero-panel.has-art:after{background:linear-gradient(90deg,var(--blush) 0%,var(--blush) 38%,rgba(243,232,213,.75) 46%,rgba(243,232,213,0) 60%)}
+.hero-panel.has-art .cast{display:none}
+
+/* painted thumbnails: evolution timeline, reveal, share card, home preview */
+.art-thumb{aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1.5px solid var(--ink);background:var(--rose)}
+.art-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.node .art-thumb{width:100%;max-width:150px}
+/* locked forms: a blurred, darkened teaser instead of the real painting */
+.node.locked .art-thumb img{filter:blur(8px) brightness(.85) saturate(.5);transform:scale(1.2)}
+.rival .art-thumb{width:min(190px,36vw)}
+.sharecard .art-thumb{width:120px;border-color:var(--surface)}
+.reveal .stage>.art-thumb{aspect-ratio:auto;border-radius:20px;border:2px solid var(--surface)}
+.reveal.go .old.art-thumb{filter:none}
+
+@media(max-width:900px){
+  .hero-art{position:relative;left:auto;width:100%;height:auto;aspect-ratio:4/3;border-top:1.5px solid var(--ink);order:3}
+  .hero-panel.has-art:after{display:none}
+  .hero-panel.has-art .hero-copy{padding-bottom:24px}
+  .hero-panel.has-art .feat-tag{position:absolute;right:12px;bottom:12px;margin:0}
+  .pscene.scene-art{min-height:0}
+}
+
+/* painted empty state (signed-in Collection with nothing followed yet) */
+.empty .art-thumb{width:min(280px,72%);margin:0 auto 16px}
